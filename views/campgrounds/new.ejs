@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="row mb-5">
+    <h1 class="text-center">New Campground</h1>
+    <div class="col-md-6 offset-md-3">
+        <form id="newCamp" action="/campgrounds" method="POST" class="validated-form" novalidate enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" id="title" name="campground[title]" class="form-control" required>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" id="location" name="campground[location]" class="form-control" required>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price (/night)</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input id="price" type="text" class="form-control" placeholder="0.00" aria-label="price" 
+                        aria-describedby="price-label" name="campground[price]" required>
+                    <div class="valid-feedback">Looks good!</div>
+                  </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="image" class="form-label">Images</label>
+                <input class="form-control" type="file" id="image" name="image" multiple>
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea type="text" id="description" name="campground[description]" class="form-control" required></textarea>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+        </form>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-success" form="newCamp">Add Campground</button>
+            <a href="/campgrounds" class="btn btn-danger">Cancel</a>
+        </div>
+    </div>
+</div>
+
+
